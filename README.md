@@ -2,7 +2,7 @@
 
 This repository is based on the work and demonstration by TechLead on ChatGPT Retrieval. You can find the original [YouTube Video here](https://youtu.be/9AXP7tCI9PI).
 
-I also added RAG implementation to the repo.  
+I also added a RAG implementation to the repo.  
 
 In addition, `pipenv` is utilized for environment management. Pls see details below.
 
@@ -24,12 +24,9 @@ Install the dependencies specified in the `Pipfile.lock` file
 pipenv install
 ```
 
-
-
-
 ## Custom Data
 
-Place your own data into `data/data.txt`.
+Place your own data into the `data/` folder.
 
 ## Example usage
 Test reading `data/data.txt` file.
@@ -46,4 +43,5 @@ Your cat's name is Muffy.
 
 ## RAG
 
-In addition to what's in the original repo, I also experimented a bit with RAG 🤩, following the [LangChain doc](https://python.langchain.com/docs/use_cases/question_answering/). Pls see `rag.py`. 
+In addition to what's in the original repo, I also experimented a bit more with RAG 🤩, following the [LangChain doc](https://python.langchain.com/docs/use_cases/question_answering/), I added a RAG implementation that utilizes a webpage as the knowledge base. Pls run `rag_web.py` for fun, or check out `rag_web.ipynb` for sample results. 
+

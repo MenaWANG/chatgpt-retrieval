@@ -18,14 +18,17 @@ loader = WebBaseLoader(
 )
 docs = loader.load()
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, 
+                                               chunk_overlap=200)
 splits = text_splitter.split_documents(docs)
 
-vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings())
+vectorstore = Chroma.from_documents(documents=splits, 
+                                    embedding=OpenAIEmbeddings())
 retriever = vectorstore.as_retriever()
 
 prompt = hub.pull("rlm/rag-prompt")
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", 
+                 temperature=0)
 
 
 def format_docs(docs):
@@ -39,7 +42,7 @@ rag_chain = (
     | StrOutputParser()
 )
 
-rag_chain.invoke("What is Task Decomposition?")
+rag_chain.invoke("What do you know about HuggingGPT?")
 
 # cleanup
 vectorstore.delete_collection()
